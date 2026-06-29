@@ -6,6 +6,10 @@ const app = express();
 app.use(express.json());
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+    res.send('トップページです');
+});
+
 const pool = new Pool({
     host:       process.env.DB_HOST,
     port:       process.env.DB_PORT,
